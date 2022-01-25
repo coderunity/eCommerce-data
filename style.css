@@ -1,0 +1,18 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+.local_ls{
+    
+    margin: 100px auto;
+}
+
+.product_photo img{
+    width: 100%;
+    
+}
+
+#add_box{
+    display: none;
+}
