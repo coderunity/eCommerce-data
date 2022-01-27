@@ -30,7 +30,7 @@ let name = this.querySelector('input[name="name"]').value;
 let regular_prise = this.querySelector('input[name="regular_prise"]').value;
 let sele_prise = this.querySelector('input[name="sele_prise"]').value;
 let photo_link = this.querySelector('input[name="photo_link"]').value;
-let button = this.querySelector('input[name="button"]');
+
 
 
 let prodect_arr;
@@ -50,7 +50,7 @@ prodect_arr.push({
     photo_link      : photo_link
 });
 
-
+Datasend('product', prodect_arr);
 
 allproducts();
 
@@ -62,11 +62,11 @@ allproducts();
 function allproducts(){
 
 
-    let allproduct = dataGet('product');
+    let all_product = dataGet('product');
 
     let data = '';
 
-    allproduct.map( pdata => {
+    all_product.map( pdata => {
 
         data += `
         
@@ -74,9 +74,9 @@ function allproducts(){
             <div class="card">
                 <div class="card-body">
                 <div class="product_photo">
-                <img src="${pdata.photo_link}" alt="">
-                <h2>Alu</h2>
-                <p> <span>${pdata.regular_prise}</span> <span> ${pdata.sele_prise}</span> </p>
+                <img class="my-2" src="${pdata.photo_link}" alt="">
+                <h2>${pdata.name}</h2>
+                <p> <span style="color: red; font-weight: 600;"> Regular : ${pdata.regular_prise} ৳</span> || <span style="color: green; font-weight: 600;"> Sele : ${pdata.sele_prise} ৳</span> </p>
 
                 <button class="btn btn-success">Add to card</button>
             </div>
